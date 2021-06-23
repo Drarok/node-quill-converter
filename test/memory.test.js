@@ -1,11 +1,12 @@
-const { iterate } = require('leakage');
 const {
   convertTextToDelta,
   convertHtmlToDelta,
   convertDeltaToHtml } = require('../lib/index.js');
 
 
-describe('node-quill-converter', () => {
+xdescribe('node-quill-converter', () => {
+  const { iterate } = require('leakage');
+
   it('convertTextToDelta - does not leak', () => {
     iterate(() => {
       const text = 'hello, world';

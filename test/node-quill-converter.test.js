@@ -64,4 +64,20 @@ describe('node-quill-converter', () => {
 
     expect(htmlResult).toEqual(htmlExpected);
   });
+
+  it('GitHub Issue #22', () => {
+    const sampleData = [
+      `<pre>Hola</pre>`,
+      `<h3>Hello</h3>`,
+    ];
+
+    const test = () => {
+      sampleData.forEach((sample) => {
+        const delta = convertHtmlToDelta(sample);
+        convertDeltaToHtml(delta);
+      });
+    };
+
+    expect(test).not.toThrow();
+  });
 });
